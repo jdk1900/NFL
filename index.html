@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NFL Apply page Page</title>
+<link rel="stylesheet" href="css/NFL.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+
+<div class="container">
+       <div class="col-sm-12 text-row-top">
+            <div class="top-photo">
+
+            </div>
+            <div class="top-text">
+               <h4>Hello there, please fill the following forms to apply for NFL lineman!</h4><br>
+               <h6>(all fields are mandatory)</h6>  
+            </div>
+                 <div class = "forms">
+                    <div class="form-group">
+                         <label>*Name:</label>
+                         <input type="text" class="form-control" id="fname" placeholder="Enter First name">
+                    </div>
+
+                    <div class="form-group">
+                         <label>*Last name:</label>
+                         <input type="name" class="form-control" id="lname" placeholder="Enter Last name">
+                    </div>
+
+                    <div class="form-group">
+                         <label>*Age: (Enter Age from 20 to 31)</label>
+                         <input type="number" class="form-control" id="age" value="20">
+                    </div>
+
+                    <div class="form-group">
+                         <label>*State:</label>
+                         <input type="name" class="form-control" id="state" placeholder="Enter a US State">
+                    </div>
+                    <h4>* Use only uppercase characters</h4>
+                    <button onclick="mycheck()" id="submit" type="button" class="btn btn-primary">Submit</button>
+                   
+               </div>
+
+
+                    
+     </div>
+     
+</div>
+
+<script>
+
+function mycheck()
+{
+   var lineman = {
+     name : document.getElementById("fname").value,
+     lastname: document.getElementById("lname").value,
+     age: document.getElementById("age").value,
+     state: document.getElementById("state").value
+     }
+     
+
+
+        if (lineman.age < 20 || lineman.age > 31 ) {
+             document.getElementById("age").style.backgroundColor = "yellow";
+             IsAble=false;
+           }
+                else if (lineman.age >= 20 || lineman.age <= 31) {
+                     document.getElementById("age").style.backgroundColor = "white";
+                     IsAble=true;
+           }
+
+
+          if (lineman.name === "" || lineman.lastname === "" || lineman.state === "") {
+               NotEmpty = false;
+          } 
+               else { 
+               NotEmpty=true;
+               }
+
+          if (NotEmpty && IsAble == true) {
+                    window.alert("Thank you for your application")
+          }
+               else {
+               window.alert("Information is missing or it's incorect.Please review again the application form")
+               }
+}
+     
+ </script>
+
+</body>
+
+
